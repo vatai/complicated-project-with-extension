@@ -6,4 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "complicated-project-with-extension"
 version = "v42"
 
+[tool.setuptools]
+ext-modules = [ {name = "foo", sources = ["ext/foo.c"]} ]
+
 [tool.cibuildwheel]
