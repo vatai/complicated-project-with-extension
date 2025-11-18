@@ -22,4 +22,4 @@ include = ["cpwe", "third_party"]
 build-frontend="build[uv]"
 before-all = "./third_party/install.sh"
 build = "cp313-manylinux_x86_64"
-manylinux-x86_64-image = "manylinux-mod"
+# manylinux-x86_64-image = "manylinux-mod"
