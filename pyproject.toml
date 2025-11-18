@@ -8,4 +8,7 @@ version = "v42"
 
 [tool.setuptools]
 
+[tool.setuptools.packages.find]
+include = ["complicated-project-with-extension", "ext"]
+
 [tool.cibuildwheel]
