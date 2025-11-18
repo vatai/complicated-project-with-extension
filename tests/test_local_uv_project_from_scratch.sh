@@ -4,7 +4,7 @@ set -e
 cd "$(git rev-parse --show-toplevel)"
 rm -rf wheelhouse
 uvx cibuildwheel
-WHEEL="$(pwd)/wheelhouse/cpwe-42-cp313*.whl"
+WHEEL="$(pwd)/wheelhouse/cpwe-42-cp313*manylinux*.whl"
 rm -rf /tmp/test_site
 mkdir -p /tmp/test_site
 cd /tmp/test_site
