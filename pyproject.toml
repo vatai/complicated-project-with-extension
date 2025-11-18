@@ -6,11 +6,12 @@ build-backend = "setuptools.build_meta"
 name = "cpwe"
 version = "v42"
 
+[tool.setuptools.packages.find]
+include = ["cpwe", "third_party"]
+
 [tool.setuptools.package-data]
 "cpwe" = ["isl.pxd"]
-
-[tool.setuptools.packages.find]
-include = ["cpwe"]
+"third_party" = ["install.sh", "isl.bundle"]
 
 # [tool.setuptools]
 # ext-modules = [
@@ -18,5 +19,7 @@ include = ["cpwe"]
 # ]
 
 [tool.cibuildwheel]
-before-all = "uname -a"
+build-frontend="build[uv]"
+before-all = "./third_party/install.sh"
 build = "cp313-manylinux_x86_64"
+manylinux-x86_64-image = "manylinux-mod"

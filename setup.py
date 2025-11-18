@@ -11,9 +11,9 @@ ext_modules = [
         "cpwe.foo",
         sources=["cpwe/foo.py"],
         libraries=["isl"],
-        # library_dirs=["/home/vatai/code/tadashi/ctadashi/lib"],
-        # runtime_library_dirs=["/home/vatai/code/tadashi/ctadashi/lib"],
-        # include_dirs=["/home/vatai/code/tadashi/ctadashi/include"],
+        library_dirs=["/project/isl/.libs"],
+        runtime_library_dirs=["/project/isl/.libs"],
+        include_dirs=["/project/isl/include"],
     )
 ]
 
