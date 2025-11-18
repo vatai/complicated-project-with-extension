@@ -6,10 +6,16 @@ build-backend = "setuptools.build_meta"
 name = "cpwe"
 version = "v42"
 
-[tool.setuptools]
+[tool.setuptools.package-data]
+"cpwe" = ["isl.pxd"]
 
 [tool.setuptools.packages.find]
-include = ["cpwe", "ext"]
+include = ["cpwe"]
+
+# [tool.setuptools]
+# ext-modules = [
+#   {name = "cpwe.foo", sources = ["cpwe/foo.py"]}
+# ]
 
 [tool.cibuildwheel]
 before-all = "uname -a"
