@@ -3,7 +3,7 @@ requires = ["setuptools", "cython", "cibuildwheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "complicated-project-with-extension"
+name = "complicated_project_with_extension"
 version = "v42"
 
 [tool.setuptools]
@@ -12,4 +12,4 @@ version = "v42"
 include = ["complicated-project-with-extension", "ext"]
 
 [tool.cibuildwheel]
-build = "cp38-manylinux_x86_64"
+build = "cp313-manylinux_x86_64"
