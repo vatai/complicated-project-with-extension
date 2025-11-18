@@ -2,11 +2,10 @@
 requires = ["setuptools", "cython", "cibuildwheel"]
 build-backend = "setuptools.build_meta"
 
-[complicated-project-with-extension]
+[project]
 name = "complicated-project-with-extension"
 version = "v42"
 
 [tool.setuptools]
-ext-modules = [ {name = "foo", sources = ["ext/foo.c"]} ]
 
 [tool.cibuildwheel]
