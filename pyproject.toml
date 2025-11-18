@@ -12,3 +12,4 @@ version = "v42"
 include = ["complicated-project-with-extension", "ext"]
 
 [tool.cibuildwheel]
+build = "cp38-manylinux_x86_64"
