@@ -1,0 +1,7 @@
+# -*- mode:org -*-
+
+#+title: Complicated project with extension
+
+A better title would have been: "Complicated Python project with
+Cython or SWIG extensions which have further dependencies on C
+libraries".
