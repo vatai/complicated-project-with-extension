@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/sh
 set -x
 set -e
 
@@ -8,7 +8,14 @@ git -C /project/isl fetch
 git -C /project/isl checkout master
 
 # yum install -y isl-devel
-yum install -y gmp-c++ gmp-devel
+if [ -e "$(which yum)" ]; then
+    yum install -y gmp-c++ gmp-devel
+fi
+if [ -e "$(which apk)" ]; then
+    apk add gmp
+    apk add gmp-dev
+fi
+
 cd /project/isl/
 ./autogen.sh
 ./configure
