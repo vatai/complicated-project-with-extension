@@ -2,7 +2,7 @@
 set -x
 set -e
 
-if [ -z ${var+x} ]; then
+if [ -z ${CIBUILDWHEEL+x} ]; then
     REPO_ROOT="$(git rev-parse --show-toplevel)"
     PREFIX="$REPO_ROOT/third_party/opt"
 else
