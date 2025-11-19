@@ -2,12 +2,9 @@
 set -x
 set -e
 
-if [ -z ${CIBUILDWHEEL+x} ]; then
-    REPO_ROOT="$(git rev-parse --show-toplevel)"
-    PREFIX="$REPO_ROOT/third_party/opt"
-else
-    PREFIX=/usr/local
-fi
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+PREFIX="$REPO_ROOT/third_party/opt"
+
 if [ -e "$REPO_ROOT/third_party/isl.bundle" ]; then
     ORIGIN="$REPO_ROOT/third_party/isl.bundle"
 elif [ -e /project/third_party/isl.bundle ]; then

@@ -5,11 +5,8 @@ import os
 from Cython.Build import cythonize
 from setuptools import Extension, setup
 
-if "CIBUILDWHEEL" in os.environ:
-    PREFIX = "/usr/local"
-else:
-    PROJ_ROOT = os.path.abspath(f"{__file__}/..")
-    PREFIX = os.path.join(PROJ_ROOT, "third_party/opt")
+PROJ_ROOT = os.path.abspath(f"{__file__}/..")
+PREFIX = os.path.join(PROJ_ROOT, "third_party/opt")
 
 ext_modules = [
     Extension(
