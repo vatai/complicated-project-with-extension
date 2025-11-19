@@ -20,6 +20,6 @@ include = ["cpwe", "third_party"]
 
 [tool.cibuildwheel]
 build-frontend="build[uv]"
-before-all = ["pwd", "ls", "ls -l third_party", "cat ./third_party/install.sh", "./third_party/install.sh"]
+before-all = ["./third_party/install.sh"]
 # build = "cp313-manylinux_x86_64"
 # manylinux-x86_64-image = "manylinux-mod"
