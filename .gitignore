@@ -1,9 +1,12 @@
 *~
+third_party/isl.bundle
+third_party/opt
+
 dist
-*.egg-info
+build
 wheelhouse
+*.egg-info
 **/*.c
 **/*.cpp
 **/*.cc
-third_party/isl.bundle
-third_party/opt
+**/*.so
