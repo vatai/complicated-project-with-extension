@@ -1,5 +1,8 @@
 # build with: podman build third_party
+#
 # or
+#
+# docker build third_party -t manylinux-mod
 FROM quay.io/pypa/manylinux_2_28_x86_64
 RUN yum install -y gmp-c++ gmp-devel
 ADD isl.bundle .

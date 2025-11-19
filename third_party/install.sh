@@ -20,7 +20,5 @@ cd /project/isl/
 ./autogen.sh
 ./configure
 make -j
-echo "=== include ==="
-ls /project/isl/include
 
 # cp -r /isl /project

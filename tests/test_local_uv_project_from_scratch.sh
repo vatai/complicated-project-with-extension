@@ -11,10 +11,9 @@ cd /tmp/test_site
 uv init
 uv add $WHEEL
 cat > run.py << EOF
-import cpwe
-import cpwe.foo
-print(f"{cpwe.__file__=}")
-print(f"{cpwe.foo.__file__=}")
+from cpwe.foo import UnionMap
+obj = UnionMap("[N] -> {}")
+print(obj)
 EOF
 
 uv run ./run.py
