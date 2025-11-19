@@ -5,10 +5,15 @@ set -e
 if [ -z ${var+x} ]; then
     REPO_ROOT="$(git rev-parse --show-toplevel)"
     PREFIX="$REPO_ROOT/third_party/opt"
-    ORIGIN="$REPO_ROOT/third_party/isl.bundle"
 else
     PREFIX=/usr/local
+fi
+if [ -e "$REPO_ROOT/third_party/isl.bundle" ]; then
+    ORIGIN="$REPO_ROOT/third_party/isl.bundle"
+elif [ -e /project/third_party/isl.bundle ]; then
     ORIGIN=/project/third_party/isl.bundle
+else
+    ORIGIN=https://repo.or.cz/isl.git
 fi
 
 git init /tmp/isl
