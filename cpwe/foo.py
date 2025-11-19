@@ -21,4 +21,4 @@ class UnionMap:
             isl.isl_ctx_free(self._ctx)
 
     def __repr__(self):
-        return isl.isl_union_map_to_str(self._umap).decode()
+        return "FUBAR:" + isl.isl_union_map_to_str(self._umap).decode()

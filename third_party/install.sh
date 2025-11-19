@@ -2,10 +2,19 @@
 set -x
 set -e
 
-git init /project/isl
-git -C /project/isl remote add origin /project/third_party/isl.bundle
-git -C /project/isl fetch
-git -C /project/isl checkout master
+if [ -z ${var+x} ]; then
+    REPO_ROOT="$(git rev-parse --show-toplevel)"
+    PREFIX="$REPO_ROOT/third_party/opt"
+    ORIGIN="$REPO_ROOT/third_party/isl.bundle"
+else
+    PREFIX=/usr/local
+    ORIGIN=/project/third_party/isl.bundle
+fi
+
+git init /tmp/isl
+git -C /tmp/isl remote add origin "$ORIGIN"
+git -C /tmp/isl fetch
+git -C /tmp/isl checkout master
 
 # yum install -y isl-devel
 if [ -e "$(which yum)" ]; then
@@ -15,10 +24,9 @@ if [ -e "$(which apk)" ]; then
     apk add gmp
     apk add gmp-dev
 fi
-
-cd /project/isl/
+cd /tmp/isl/
 ./autogen.sh
-./configure
-make -j
+./configure --prefix=$PREFIX
+make -j install
 
 # cp -r /isl /project

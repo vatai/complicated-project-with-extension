@@ -6,3 +6,4 @@ wheelhouse
 **/*.cpp
 **/*.cc
 third_party/isl.bundle
+third_party/opt
